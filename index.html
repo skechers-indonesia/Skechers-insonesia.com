@@ -1,0 +1,203 @@
+selamat datang di TOKO SKEC_HERS INDONESIA
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pemesanan Sepatu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #f3f4f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .form-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-md mx-auto form-card p-6">
+        <div class="text-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-800">Format Order Sepatu</h2>
+            <p class="text-sm text-gray-500">Silakan isi detail pesanan Anda di bawah ini</p>
+        </div>
+
+        <form id="orderForm" class="space-y-4">
+            <!-- ID Produk -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">ID Produk / SKU</label>
+                <input type="text" id="productId" placeholder="Contoh: SNK-001" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" required>
+            </div>
+
+            <!-- Nama -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                <input type="text" id="nama" placeholder="Contoh: Budi Santoso" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" required>
+            </div>
+
+            <!-- Alamat -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Alamat Lengkap</label>
+                <textarea id="alamat" rows="3" placeholder="Jl. Merdeka No. 123, Jakarta Selatan" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" required></textarea>
+            </div>
+
+            <!-- Nomor HP -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Nomor WhatsApp Anda</label>
+                <input type="tel" id="telepon" placeholder="0812xxxx" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" required>
+            </div>
+
+            <!-- Model Sepatu -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Model/Nama Sepatu</label>
+                <input type="text" id="model" placeholder="Contoh: Sneakers Classic White" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition" required>
+            </div>
+
+            <!-- Ukuran -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Pilih Ukuran (Size)</label>
+                <select id="ukuran" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition" required>
+                    <option value="" disabled selected>Pilih Size</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                </select>
+            </div>
+
+            <!-- Catatan -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Catatan Tambahan (Opsional)</label>
+                <input type="text" id="catatan" placeholder="Contoh: Packing kayu / warna tali hitam" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition">
+            </div>
+
+            <!-- Tombol Aksi -->
+            <div class="pt-4 flex flex-col gap-3">
+                <button type="button" onclick="sendWhatsApp()" 
+                    class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2 transition duration-200 shadow-md">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.305 1.652zm6.599-3.835c1.405.836 3.133 1.282 4.89 1.283 5.463 0 9.897-4.437 9.9-9.9.001-2.646-1.027-5.131-2.895-7.002-1.868-1.871-4.354-2.899-7.004-2.9-5.461 0-9.896 4.438-9.899 9.9-.001 1.927.56 3.805 1.621 5.435l-.114.167-1.126 4.105 4.212-1.105.165-.113zm11.391-4.444c-.301-.151-1.782-.879-2.057-.979-.275-.1-.475-.151-.675.151-.199.302-.777 1.056-.951 1.258-.174.202-.347.226-.648.076-.301-.151-1.274-.47-2.426-1.5-.895-.799-1.5-1.786-1.675-2.087-.174-.302-.019-.465.132-.615.135-.135.301-.351.451-.527.151-.176.201-.302.301-.502.099-.202.05-.377-.025-.527-.075-.151-.675-1.631-.925-2.235-.243-.587-.489-.508-.675-.517-.174-.008-.374-.01-.574-.01s-.525.076-.8.377c-.274.302-1.05.1.025-1.05 2.26 0 2.412 1.356 2.412 2.763 0 .414-.021.783-.04 1.123l-.008.151c.33.06.64.09.93.09 2.01 0 3.64-1.63 3.64-3.64 0-2.01-1.63-3.64-3.64-3.64-1.58 0-2.92 1.01-3.44 2.41-.52-1.4-1.86-2.41-3.44-2.41-2.01 0-3.64 1.63-3.64 3.64 0 2.01 1.63 3.64 3.64 3.64.29 0 .6-.03.93-.09l-.008.151c-.019.34-.04.709-.04 1.123 0 1.407.152 2.763 2.412 2.763.4 0 .899-.275 1.174-.577.275-.301 1.05-.726 1.05-.726s.05.226.351.377c.301.151.648.076.648.076.2 0 .426-.051.648-.076.222.025.426.076.648.076.301 0 .826-.176 1.05-.477s.174-1.056.174-1.056l-.174-.202c-.174-.202-.752-.956-.951-1.258z"/></svg>
+                    Kirim via WhatsApp
+                </button>
+                <button type="button" onclick="generateFormat()" 
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition duration-200">
+                    Cek Format (Hanya Salin)
+                </button>
+            </div>
+        </form>
+
+        <!-- Area Hasil -->
+        <div id="resultArea" class="mt-6 hidden border-t pt-6">
+            <label class="block text-sm font-bold text-gray-700 mb-2">Pratinjau Format:</label>
+            <div id="outputBox" class="bg-gray-50 p-4 rounded-lg border border-dashed border-gray-400 text-sm whitespace-pre-wrap text-gray-800 mb-4"></div>
+            <button onclick="copyToClipboard()" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 rounded-lg transition duration-200">
+                Salin Teks Saja
+            </button>
+            <p id="copyStatus" class="text-center text-xs text-green-600 mt-2 hidden">✓ Berhasil disalin!</p>
+        </div>
+    </div>
+
+    <script>
+        const TARGET_WHATSAPP = "628137372349";
+
+        function getFormData() {
+            const data = {
+                productId: document.getElementById('productId').value,
+                nama: document.getElementById('nama').value,
+                alamat: document.getElementById('alamat').value,
+                telepon: document.getElementById('telepon').value,
+                model: document.getElementById('model').value,
+                ukuran: document.getElementById('ukuran').value,
+                catatan: document.getElementById('catatan').value || '-'
+            };
+
+            if (!data.productId || !data.nama || !data.alamat || !data.telepon || !data.model || !data.ukuran) {
+                return null;
+            }
+            return data;
+        }
+
+        function createFormatText(data) {
+            return `*FORMAT ORDER SEPATU*
+-------------------------
+ID Produk: ${data.productId}
+Nama: ${data.nama}
+Alamat: ${data.alamat}
+No. HP: ${data.telepon}
+Model: ${data.model}
+Size: ${data.ukuran}
+Catatan: ${data.catatan}
+-------------------------
+Terima kasih!`;
+        }
+
+        function showAlert(msg) {
+            const messageBox = document.createElement('div');
+            messageBox.className = "fixed top-5 left-1/2 -translate-x-1/2 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg z-50";
+            messageBox.innerText = msg;
+            document.body.appendChild(messageBox);
+            setTimeout(() => messageBox.remove(), 3000);
+        }
+
+        function generateFormat() {
+            const data = getFormData();
+            if (!data) {
+                showAlert("Harap isi semua kolom wajib!");
+                return;
+            }
+
+            const formatText = createFormatText(data);
+            document.getElementById('outputBox').innerText = formatText;
+            document.getElementById('resultArea').classList.remove('hidden');
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        function sendWhatsApp() {
+            const data = getFormData();
+            if (!data) {
+                showAlert("Harap isi semua kolom wajib sebelum mengirim!");
+                return;
+            }
+
+            const formatText = createFormatText(data);
+            const encodedText = encodeURIComponent(formatText);
+            const waUrl = `https://wa.me/${TARGET_WHATSAPP}?text=${encodedText}`;
+            
+            window.open(waUrl, '_blank');
+        }
+
+        function copyToClipboard() {
+            const text = document.getElementById('outputBox').innerText;
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            const status = document.getElementById('copyStatus');
+            status.classList.remove('hidden');
+            setTimeout(() => {
+                status.classList.add('hidden');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
+
+```
